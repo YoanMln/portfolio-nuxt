@@ -4,7 +4,6 @@ defineProps({
   reference: { type: String },
   moduleLabel: { type: String },
   tags: { type: Array },
-  slides: { type: Array },
 })
 </script>
 
@@ -16,7 +15,7 @@ defineProps({
     <span class="readout readout--top-right">scan ...</span>
     <span class="readout readout--bottom-left">statut : ok</span>
     <span class="readout readout--bottom-right" />
-    <UiCarousel :slides="slides" />
+    <slot />
     <div class="project-card__info">
       <div class="project-card__heading">
         <h3 class="project-card__title">{{ title }}</h3>

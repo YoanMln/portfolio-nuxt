@@ -14,6 +14,8 @@ import watchmakersguide from '~/data/projects/watchmakersguide.json'
       :module-label="watchmakersguide.moduleLabel"
       :tags="watchmakersguide.tags"
       :slides="watchmakersguide.slides"
-    />
+    >
+      <UiCarousel :slides="watchmakersguide.slides" />
+    </ProjectCard>
   </section>
 </template>
