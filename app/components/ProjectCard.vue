@@ -1,9 +1,9 @@
 <script setup>
 defineProps({
-  title: { type: String },
-  reference: { type: String },
-  moduleLabel: { type: String },
-  tags: { type: Array },
+  title: { type: String, required: true },
+  reference: { type: String, required: true },
+  moduleLabel: { type: String, requiered: true },
+  tags: { type: Array, default: () => [] },
 })
 </script>
 
