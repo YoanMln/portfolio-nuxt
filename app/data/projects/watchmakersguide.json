@@ -1,0 +1,23 @@
+{
+  "title": "Watchmaker's Guide",
+  "reference": "réf-001",
+  "moduleLabel": "module 001 — site pédagogique, horlogerie mécanique",
+  "tags": ["Nuxt 3", "Vue 3", "GSAP", "SCSS / BEM"],
+  "slides": [
+    {
+      "caption": "écran 1 — découvrir",
+      "src": "/images/projects/watchmakers-guide/screen-1.webp",
+      "alt": "Portail de découverte de l'horlogerie"
+    },
+    {
+      "caption": "écran 2 — fonctionnement",
+      "src": "/images/projects/watchmakers-guide/screen-2.webp",
+      "alt": "Page décrivant le fonctionnement d'un mouvement mécanique"
+    },
+    {
+      "caption": "écran 3 — quiz",
+      "src": "/images/projects/watchmakers-guide/screen-3.webp",
+      "alt": "Page du quiz interactif avec sélection de niveau"
+    }
+  ]
+}
