@@ -13,7 +13,6 @@ import watchmakersguide from '~/data/projects/watchmakersguide.json'
       :reference="watchmakersguide.reference"
       :module-label="watchmakersguide.moduleLabel"
       :tags="watchmakersguide.tags"
-      :slides="watchmakersguide.slides"
     >
       <UiCarousel :slides="watchmakersguide.slides" />
     </ProjectCard>

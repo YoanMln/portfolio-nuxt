@@ -2,7 +2,7 @@
 defineProps({
   title: { type: String, required: true },
   reference: { type: String, required: true },
-  moduleLabel: { type: String, requiered: true },
+  moduleLabel: { type: String, required: true },
   tags: { type: Array, default: () => [] },
 })
 </script>
