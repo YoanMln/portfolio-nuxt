@@ -9,7 +9,7 @@ defineProps({
     v-slot="{ item }"
     loop
     arrows
-    :autoplay="{ delay: 2000 }"
+    :autoplay="{ delay: 5000 }"
     wheel-gestures
     :prev="{ variant: 'solid' }"
     :next="{ variant: 'solid' }"
