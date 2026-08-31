@@ -1,5 +1,5 @@
 <script setup>
-import information from '~/data/introduction/informations.json'
+import information from '~/data/hero/hero-informations.json'
 </script>
 
 <template>
