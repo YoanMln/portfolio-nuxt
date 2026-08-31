@@ -4,8 +4,12 @@ import profil from '~/data/introduction/profil.json'
 
 <template>
   <section class="intro">
-    <h1 class="intro__title">Profil : {{ profil.profil }}</h1>
-    <div class="info__tags">
+    <div class="section-head">
+      <div class="eyebrow">Profil</div>
+      <h3 class="section-title">Qui suis-je</h3>
+    </div>
+    <p class="intro__text">{{ profil.profil }}</p>
+    <div class="intro__tags">
       <span v-for="tag in profil.tags" :key="tag" class="tag">{{ tag }}</span>
     </div>
   </section>
