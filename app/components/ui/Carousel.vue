@@ -1,6 +1,6 @@
 <script setup>
 defineProps({
-  slides: { type: Array },
+  slides: { type: Array, default: () => [] },
 })
 </script>
 
