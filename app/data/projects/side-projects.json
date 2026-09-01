@@ -5,7 +5,7 @@
     "moduleLabel": "module 002 - Application permettant de rechercher et consulter des cartes Yu-Gi-Oh!",
     "tags": ["Vue 3", "Laravel 12", "API", "SCSS"],
     "image": "/images/projects/side-projects/ygo.webp",
-    "alt": "screen du projet YGO_API"
+    "alt": "capture d'écran du projet YGO_API"
   },
   {
     "title": "WeatherApp",
@@ -13,6 +13,6 @@
     "moduleLabel": "module 003 - Application météo interactive",
     "tags": ["Vue 3", "API", "SCSS"],
     "image": "/images/projects/side-projects/weather.webp",
-    "alt": "screen du projet WeatherApp"
+    "alt": "capture d'écran de l'application WeatherApp"
   }
 ]
