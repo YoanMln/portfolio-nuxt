@@ -21,6 +21,6 @@ defineProps({
       container: 'ms-0',
     }"
   >
-    <img :src="item.src" :alt="item.alt" width="320" height="320" />
+    <img :src="item.src" :alt="item.alt" />
   </UCarousel>
 </template>
