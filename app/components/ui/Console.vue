@@ -14,6 +14,7 @@ let isDeleting = false
 let timer = null
 
 function step() {
+  if (!lines.length) return
   const line = lines[lineIndex]
   let delay
 
@@ -50,7 +51,7 @@ onMounted(() => {
   step()
 })
 onUnmounted(() => {
-  if (timer) clearTimeout(timer)
+  if (timer !== null) clearTimeout(timer)
 })
 </script>
 
