@@ -13,5 +13,6 @@ import Contact from '~/components/Home/Contact.vue'
     <SideProjects />
     <Stack />
     <Contact />
+    <UiConsole />
   </div>
 </template>
