@@ -14,7 +14,6 @@ let isDeleting = false
 let timer = null
 
 function step() {
-  if (!lines.length) return
   const line = lines[lineIndex]
   let delay
 
@@ -43,6 +42,7 @@ function step() {
 }
 
 onMounted(() => {
+  if (!lines.length) return
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches
   if (prefersReducedMotion) {
     displayed.value = lines[0]
