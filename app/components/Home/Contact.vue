@@ -39,7 +39,9 @@ async function onSubmit(event) {
     }, 3000)
   } catch (error) {
     console.error("Erreur lors de l'envoi :", error)
-    errorMessage.value = `L'envoi a échoué. Vous pouvez m'écrire directement à ${config.public.email}`
+    errorMessage.value = config.public.email
+      ? `L'envoi a échoué. Vous pouvez m'écrire directement à ${config.public.email}`
+      : "L'envoi a échoué. Merci de réessayer plus tard."
   } finally {
     isLoading.value = false
   }
@@ -82,16 +84,24 @@ async function onSubmit(event) {
     <p v-else class="contact__success">Merci pour votre message !</p>
     <p v-if="errorMessage" class="contact__error">{{ errorMessage }}</p>
     <div class="contact__links">
-      <div class="contact__links">
-        <NuxtLink target="_blank" rel="noopener noreferrer" :to="config.public.linkedin"
-          >Linkedin</NuxtLink
-        >
-      </div>
-      <div class="contact__links">
-        <NuxtLink target="_blank" rel="noopener noreferrer" :to="config.public.github"
-          >GitHub</NuxtLink
-        >
-      </div>
+      <NuxtLink
+        v-if="config.public.linkedin"
+        class="contact__link"
+        target="_blank"
+        rel="noopener noreferrer"
+        :to="config.public.linkedin"
+      >
+        LinkedIn
+      </NuxtLink>
+      <NuxtLink
+        v-if="config.public.github"
+        class="contact__link"
+        target="_blank"
+        rel="noopener noreferrer"
+        :to="config.public.github"
+      >
+        GitHub
+      </NuxtLink>
     </div>
   </section>
 </template>
