@@ -1,6 +1,6 @@
 [
   { "name": "Nuxt 3", "category": "framework" },
-  { "name": "Nuxt UI", "category": "kit ui" },
+  { "name": "Nuxt UI", "category": "kit UI" },
   { "name": "JavaScript", "category": "langage" },
   { "name": "HTML5", "category": "structure" },
   { "name": "CSS3", "category": "style" },
