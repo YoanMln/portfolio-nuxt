@@ -1,0 +1,9 @@
+[
+  { "name": "Nuxt 3", "category": "framework" },
+  { "name": "Nuxt UI", "category": "kit UI" },
+  { "name": "JavaScript", "category": "langage" },
+  { "name": "HTML5", "category": "structure" },
+  { "name": "CSS3", "category": "style" },
+  { "name": "SCSS", "category": "style" },
+  { "name": "Laravel", "category": "backend" }
+]
