@@ -1,0 +1,7 @@
+$bp-mobile: 680px;
+
+@mixin mq-mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
