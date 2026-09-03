@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: $core;
+}
+
+:focus-visible {
+  outline: 2px solid $core;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: $core;
+  color: $bg-void;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

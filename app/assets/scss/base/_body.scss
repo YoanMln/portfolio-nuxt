@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+body {
+  background-color: $bg-void;
+  color: $text;
+  font-family: $font-body;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle, rgba(143, 232, 255, 0.09) 1px, transparent 1.4px),
+    linear-gradient(rgba(143, 232, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 232, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(120% 90% at 50% 0%, #0a1420 0%, #05070a 55%);
+  background-size:
+    64px 64px,
+    64px 64px,
+    64px 64px,
+    100% 100%;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+}
