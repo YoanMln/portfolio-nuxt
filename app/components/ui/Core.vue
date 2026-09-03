@@ -8,8 +8,6 @@
 </template>
 
 <style scoped lang="scss">
-@use '~/assets/scss/abstracts' as *;
-
 .core {
   position: relative;
   display: flex;
