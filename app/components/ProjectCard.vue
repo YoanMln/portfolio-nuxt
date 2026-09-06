@@ -27,3 +27,52 @@ defineProps({
     </div>
   </article>
 </template>
+
+<style scoped lang="scss">
+.project-card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid $line;
+}
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.readout {
+  position: absolute;
+  font-family: $font-mono;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  color: $core;
+  opacity: 0.75;
+  z-index: 3;
+  pointer-events: none;
+}
+.readout--top-left {
+  top: 10px;
+  left: 14px;
+}
+.readout--top-right {
+  top: 10px;
+  right: 14px;
+  text-align: right;
+}
+.readout--bottom-left {
+  bottom: 10px;
+  left: 14px;
+  color: $muted;
+}
+.readout--bottom-right {
+  bottom: 10px;
+  right: 14px;
+  color: $muted;
+  text-align: right;
+}
+</style>
