@@ -67,16 +67,17 @@ onUnmounted(() => observer?.disconnect())
     &::after {
       content: '';
       position: absolute;
-      left: 0;
-      right: 0;
-      height: 2px;
+      inset: 0;
       opacity: 0;
-      background: linear-gradient(90deg, transparent, $core, transparent);
-      box-shadow: 0 0 12px $core;
+      background: linear-gradient(90deg, transparent, $core, transparent) no-repeat;
+      background-size: 100% 2px;
+      background-position: 0 0;
+      filter: drop-shadow(0 0 12px $core);
       animation: scan 3.6s ease-in-out 1 forwards;
       animation-play-state: paused;
       pointer-events: none;
     }
+
     &.is-scanned::after {
       animation-play-state: running;
     }
@@ -149,21 +150,21 @@ onUnmounted(() => observer?.disconnect())
 
 @keyframes scan {
   0% {
-    top: 0;
+    transform: translateY(0);
     opacity: 0;
   }
   10% {
     opacity: 0.9;
   }
   50% {
-    top: calc(100% - 2px);
+    transform: translateY(calc(100% - 2px));
     opacity: 0.9;
   }
   90% {
     opacity: 0.9;
   }
   100% {
-    top: 0;
+    transform: translateY(0);
     opacity: 0;
   }
 }
