@@ -3,7 +3,7 @@ import stack from '~/data/stack/stack.json'
 </script>
 
 <template>
-  <section class="stack">
+  <section class="section stack">
     <div class="section-head">
       <div class="eyebrow">Stack technique</div>
       <h2 class="section-title">Outils & langages</h2>
