@@ -11,16 +11,30 @@ defineProps({
     arrows
     :autoplay="{ delay: 5000 }"
     wheel-gestures
-    :prev="{ variant: 'solid' }"
-    :next="{ variant: 'solid' }"
     :items="slides"
     :ui="{
-      item: 'basis-full ps-0',
-      prev: 'sm:start-8',
-      next: 'sm:end-8',
-      container: 'ms-0',
+      root: 'h-full',
+      viewport: 'h-full',
+      container: 'ms-0 h-full items-stretch',
+      item: 'basis-full ps-0 h-full',
+      prev: 'sm:start-8 carousel__arrow carousel__arrow--prev',
+      next: 'sm:end-8 carousel__arrow carousel__arrow--next',
     }"
   >
     <img :src="item.src" :alt="item.alt" />
   </UCarousel>
 </template>
+
+<style scoped lang="scss">
+:deep(.carousel__arrow) {
+  border: 1px solid $line;
+  border-radius: 5px;
+  background-color: rgba($bg-void, 0.7);
+  color: $core;
+
+  &:hover {
+    border-color: $core;
+    box-shadow: 0 0 18px -4px rgba($core, 0.6);
+  }
+}
+</style>
