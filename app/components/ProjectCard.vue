@@ -45,7 +45,7 @@ defineProps({
     overflow: hidden;
     background-color: $bg-panel-2;
   }
-  &__media :slotted(img) {
+  &__media :deep(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
