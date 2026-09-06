@@ -5,19 +5,40 @@ defineProps({
   moduleLabel: { type: String, required: true },
   tags: { type: Array, default: () => [] },
 })
+
+const media = ref(null)
+const hasScanned = ref(false)
+let observer = null
+
+onMounted(() => {
+  if (!('IntersectionObserver' in window)) {
+    hasScanned.value = true
+    return
+  }
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        hasScanned.value = true
+        observer.disconnect()
+      }
+    },
+    { threshold: 0.3 },
+  )
+  observer.observe(media.value)
+})
+onUnmounted(() => observer?.disconnect())
 </script>
 
 <template>
   <article class="project-card">
     <UiHudCorners />
-
     <span class="readout readout--top-left">{{ reference }}</span>
     <span class="readout readout--top-right">scan ...</span>
     <span class="readout readout--bottom-left">statut : ok</span>
     <span class="readout readout--bottom-right">
       {{ tags.slice(0, 2).join(' / ').toLowerCase() }}
     </span>
-    <div class="project-card__media">
+    <div ref="media" class="project-card__media" :class="{ 'is-scanned': hasScanned }">
       <slot />
     </div>
     <div class="project-card__info">
@@ -38,17 +59,33 @@ defineProps({
   padding: 10px 10px 34px;
   border: 1px solid $line;
   background-color: $bg-panel;
-
   &__media {
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: $bg-panel-2;
-  }
-  &__media :deep(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(90deg, transparent, $core, transparent) no-repeat;
+      background-size: 100% 2px;
+      background-position: 0 0;
+      filter: drop-shadow(0 0 12px $core);
+      animation: scan 3.6s ease-in-out 1 forwards;
+      animation-play-state: paused;
+      pointer-events: none;
+    }
+
+    &.is-scanned::after {
+      animation-play-state: running;
+    }
+    :deep(img) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__info {
     display: flex;
@@ -80,15 +117,14 @@ defineProps({
     gap: 8px;
   }
 }
-
 .readout {
   position: absolute;
+  z-index: 3;
   font-family: $font-mono;
   font-size: 9.5px;
   letter-spacing: 0.06em;
   color: $core;
   opacity: 0.75;
-  z-index: 3;
   pointer-events: none;
 }
 .readout--top-left {
@@ -110,5 +146,26 @@ defineProps({
   right: 14px;
   color: $muted;
   text-align: right;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(calc(100% - 2px));
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
 }
 </style>
