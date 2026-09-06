@@ -64,12 +64,12 @@ defineProps({
   right: 14px;
   text-align: right;
 }
-.readout-bottom--left {
+.readout--bottom-left {
   bottom: 10px;
   left: 14px;
   color: $muted;
 }
-.readout.bottom--right {
+.readout--bottom-right {
   bottom: 10px;
   right: 14px;
   color: $muted;
