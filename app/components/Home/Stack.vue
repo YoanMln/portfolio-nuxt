@@ -19,8 +19,6 @@ import stack from '~/data/stack/stack.json'
 </template>
 
 <style scoped lang="scss">
-@use '~/assets/scss/abstracts' as *;
-
 .stack__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
