@@ -6,7 +6,7 @@ import profil from '~/data/introduction/profil.json'
   <section class="section intro">
     <div class="section-head">
       <div class="eyebrow">Profil</div>
-      <h3 class="section-title">Qui suis-je</h3>
+      <h2 class="section-title">Qui suis-je</h2>
     </div>
     <p class="intro__text">{{ profil.profil }}</p>
     <div class="intro__tags">
@@ -14,3 +14,14 @@ import profil from '~/data/introduction/profil.json'
     </div>
   </section>
 </template>
+
+<style scoped lang="scss">
+.intro__text {
+  max-width: 62ch;
+}
+.intro__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+</style>

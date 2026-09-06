@@ -1,0 +1,9 @@
+@use '~/assets/scss/abstracts' as *;
+
+.tag {
+  font-family: $font-mono;
+  font-size: 10px;
+  border: 1px solid $line;
+  color: $core;
+  padding: 4px 9px;
+}
