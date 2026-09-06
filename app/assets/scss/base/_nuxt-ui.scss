@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+:root {
+  --ui-radius: 0;
+
+  --ui-primary: #{$core};
+  --ui-secondary: #{$gold};
+  --ui-success: #{$core};
+  --ui-info: #{$core};
+  --ui-warning: #{$gold};
+  --ui-error: #{$red};
+
+  --ui-bg: #{$bg-void};
+  --ui-bg-muted: #{$bg-panel};
+  --ui-bg-elevated: #{$bg-panel-2};
+  --ui-bg-accented: #{$bg-panel-2};
+  --ui-bg-inverted: #{$core};
+
+  --ui-text-dimmed: #{$muted};
+  --ui-text-muted: #{$muted};
+  --ui-text-toned: #{$text};
+  --ui-text: #{$text};
+  --ui-text-highlighted: #{$white};
+  --ui-text-inverted: #{$bg-void};
+
+  --ui-border: #{$line};
+  --ui-border-muted: #{$line};
+  --ui-border-accented: #{$line};
+  --ui-border-inverted: #{$core};
+}
