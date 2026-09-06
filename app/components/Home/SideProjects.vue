@@ -3,7 +3,7 @@ import sideprojects from '~/data/projects/side-projects.json'
 </script>
 
 <template>
-  <section class="side-projects">
+  <section class="section side-projects">
     <div class="section-head">
       <div class="eyebrow">Unités secondaires</div>
       <h2 class="section-title">Autres projets</h2>

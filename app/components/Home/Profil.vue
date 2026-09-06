@@ -3,7 +3,7 @@ import profil from '~/data/introduction/profil.json'
 </script>
 
 <template>
-  <section class="intro">
+  <section class="section intro">
     <div class="section-head">
       <div class="eyebrow">Profil</div>
       <h3 class="section-title">Qui suis-je</h3>

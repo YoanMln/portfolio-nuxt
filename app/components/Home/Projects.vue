@@ -3,7 +3,7 @@ import watchmakersguide from '~/data/projects/watchmakersguide.json'
 </script>
 
 <template>
-  <section class="projects">
+  <section class="section projects">
     <div class="section-head">
       <div class="eyebrow">Module principal</div>
       <h2 class="section-title">Projets</h2>
