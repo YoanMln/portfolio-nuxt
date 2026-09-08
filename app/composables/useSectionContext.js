@@ -12,7 +12,7 @@ export function useSectionContext(name) {
       },
       { rootMargin: '-45% 0px -45% 0px' },
     )
-    observer.observe(el.value)
+    if (el.value) observer.observe(el.value)
   })
 
   onUnmounted(() => observer?.disconnect())
