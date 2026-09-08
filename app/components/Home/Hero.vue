@@ -1,9 +1,10 @@
 <script setup>
 import information from '~/data/hero/hero-informations.json'
+const section = useSectionContext('hero')
 </script>
 
 <template>
-  <section class="hero">
+  <section ref="section" class="hero">
     <UiCore />
     <h1 class="hero__name">{{ information.name }}</h1>
     <p class="hero__status">

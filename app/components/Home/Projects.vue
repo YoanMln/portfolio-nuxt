@@ -1,9 +1,10 @@
 <script setup>
 import watchmakersguide from '~/data/projects/watchmakersguide.json'
+const section = useSectionContext('projects')
 </script>
 
 <template>
-  <section class="section projects">
+  <section ref="section" class="section projects">
     <div class="section-head">
       <div class="eyebrow">Module principal</div>
       <h2 class="section-title">Projets</h2>
