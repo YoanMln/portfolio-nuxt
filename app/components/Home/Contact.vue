@@ -7,6 +7,16 @@ const errorMessage = ref('')
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const config = useRuntimeConfig()
 const section = useSectionContext('contact')
+const { status } = useConsole()
+const colorState = computed(() => {
+  if (isLoading.value) return 'busy'
+  if (isSubmitted.value) return 'ok'
+  if (errorMessage.value) return 'error'
+  return 'idle'
+})
+watch(colorState, (value) => {
+  status.value = value
+})
 
 function validate(state) {
   const errors = []

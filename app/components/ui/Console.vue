@@ -1,11 +1,12 @@
 <script setup>
 import lines from '~/data/console/lines.json'
 const { displayed, history } = useConsoleTyping(lines)
+const { status } = useConsole()
 </script>
 
 <template>
   <div class="ai-console" aria-hidden="true">
-    <span class="ai-console__dot" />
+    <span :class="`ai-console__dot__${status}`" class="ai-console__dot" />
     <div class="ai-console__lines">
       <span v-for="line in history" :key="line.id" class="ai-console__text">{{ line.text }}</span>
       <span class="ai-console__text">{{ displayed }}<span class="ai-console__cursor">_</span></span>
@@ -34,14 +35,28 @@ const { displayed, history } = useConsoleTyping(lines)
   backdrop-filter: blur(6px);
 
   &__dot {
+    --status: #{$core};
     width: 6px;
     height: 6px;
     margin-bottom: 5px;
     border-radius: 50%;
-    background: $red;
-    box-shadow: 0 0 8px $red;
+    background: var(--status);
+    box-shadow: 0 0 8px var(--status);
     flex: none;
     animation: console-pulse 1.8s ease-in-out infinite;
+
+    &__idle {
+      --status: #{$core};
+    }
+    &__busy {
+      --status: #{$gold};
+    }
+    &__ok {
+      --status: #{$green};
+    }
+    &__error {
+      --status: #{$red};
+    }
   }
   &__lines {
     display: flex;
