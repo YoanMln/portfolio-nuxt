@@ -55,6 +55,8 @@ export function useConsoleTyping(lines) {
     }
   }
   watch(list, () => {
+    if (timer) clearTimeout(timer)
+    timer = null
     lineIndex.value = 0
   })
   watch(target, (goal) => {
