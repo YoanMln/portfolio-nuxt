@@ -1,7 +1,14 @@
-[
-  "systèmes en ligne.",
-  "cœur réacteur : stable.",
-  "3 modules détectés.",
-  "disponible.",
-  "nouveaux projets acceptés."
-]
+{
+  "boot": ["Systèmes : en ligne.", "Cœur réacteur : stable.", "Nouveaux projets acceptés."],
+  "idle": ["En attente d'instructions..."],
+  "hero": [],
+  "profil": [
+    "Consultation du dossier.",
+    "Reconversion horlogerie → développement.",
+    "Profil vérifié."
+  ],
+  "projects": ["Module 001 — analyse en cours.", "Watchmaker's Guide"],
+  "side-projects": ["2 unités secondaires en ligne.", "Vue 3, Laravel, API externes."],
+  "stack": ["7 entrées répertoriées."],
+  "contact": ["Canal de communication ouvert."]
+}

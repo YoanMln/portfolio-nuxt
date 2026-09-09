@@ -6,6 +6,7 @@ const isLoading = ref(false)
 const errorMessage = ref('')
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const config = useRuntimeConfig()
+const section = useSectionContext('contact')
 
 function validate(state) {
   const errors = []
@@ -50,7 +51,7 @@ async function onSubmit(event) {
 </script>
 
 <template>
-  <section class="section contact">
+  <section ref="section" class="section contact">
     <div class="section-head">
       <div class="eyebrow">Contact</div>
       <h2 class="section-title">Établir la connexion</h2>

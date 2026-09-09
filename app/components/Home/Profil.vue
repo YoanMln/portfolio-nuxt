@@ -1,9 +1,10 @@
 <script setup>
 import profil from '~/data/introduction/profil.json'
+const section = useSectionContext('profil')
 </script>
 
 <template>
-  <section class="section intro">
+  <section ref="section" class="section intro">
     <div class="section-head">
       <div class="eyebrow">Profil</div>
       <h2 class="section-title">Qui suis-je</h2>

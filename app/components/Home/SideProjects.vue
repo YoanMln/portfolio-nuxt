@@ -1,9 +1,10 @@
 <script setup>
 import sideprojects from '~/data/projects/side-projects.json'
+const section = useSectionContext('side-projects')
 </script>
 
 <template>
-  <section class="section side-projects">
+  <section ref="section" class="section side-projects">
     <div class="section-head">
       <div class="eyebrow">Unités secondaires</div>
       <h2 class="section-title">Autres projets</h2>

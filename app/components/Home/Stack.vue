@@ -1,9 +1,10 @@
 <script setup>
 import stack from '~/data/stack/stack.json'
+const section = useSectionContext('stack')
 </script>
 
 <template>
-  <section class="section stack">
+  <section ref="section" class="section stack">
     <div class="section-head">
       <div class="eyebrow">Stack technique</div>
       <h2 class="section-title">Outils & langages</h2>
