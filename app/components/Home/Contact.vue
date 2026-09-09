@@ -14,9 +14,13 @@ const colorState = computed(() => {
   if (errorMessage.value) return 'error'
   return 'idle'
 })
-watch(colorState, (value) => {
-  status.value = value
-})
+watch(
+  colorState,
+  (value) => {
+    status.value = value
+  },
+  { immediate: true },
+)
 
 function validate(state) {
   const errors = []
