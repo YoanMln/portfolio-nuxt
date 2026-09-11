@@ -236,6 +236,7 @@ async function onSubmit(event) {
     align-items: center;
     justify-content: space-between;
     padding: 15px 17px;
+    margin-top: 19px;
     border: 1px solid $line;
     font-family: $font-mono;
     font-size: 12.5px;
