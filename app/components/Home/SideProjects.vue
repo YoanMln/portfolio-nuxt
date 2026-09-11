@@ -28,5 +28,8 @@ const section = useSectionContext('side-projects')
 .side-projects-container {
   display: flex;
   gap: 1.5rem;
+  @include mq-mobile {
+    flex-direction: column;
+  }
 }
 </style>
