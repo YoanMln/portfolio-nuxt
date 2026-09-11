@@ -19,10 +19,14 @@ const section = useSectionContext('profil')
 <style scoped lang="scss">
 .intro__text {
   max-width: 62ch;
+  font-size: 20px;
+  margin: 0 auto;
 }
 .intro__tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
 }
 </style>
