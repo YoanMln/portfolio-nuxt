@@ -11,12 +11,14 @@ const section = useSectionContext('side-projects')
     </div>
     <div class="side-projects-container">
       <ProjectCard
+        stacked-info
         v-for="project in sideprojects"
         :key="project.reference"
         :title="project.title"
         :reference="project.reference"
         :module-label="project.moduleLabel"
         :tags="project.tags"
+        :links="project.links"
       >
         <img :src="project.image" :alt="project.alt" />
       </ProjectCard>

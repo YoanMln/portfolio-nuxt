@@ -19,5 +19,9 @@
       "src": "/images/projects/watchmakers-guide/screen-3.webp",
       "alt": "Page du quiz interactif avec sélection de niveau"
     }
-  ]
+  ],
+
+  "links": {
+    "demo": "https://watchmakersguide.com"
+  }
 }

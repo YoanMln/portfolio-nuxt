@@ -4,6 +4,8 @@ defineProps({
   reference: { type: String, required: true },
   moduleLabel: { type: String, required: true },
   tags: { type: Array, default: () => [] },
+  links: { type: Object, default: () => ({}) },
+  stackedInfo: { type: Boolean, default: false },
 })
 
 const media = ref(null)
@@ -41,7 +43,7 @@ onUnmounted(() => observer?.disconnect())
     <div ref="media" class="project-card__media" :class="{ 'is-scanned': hasScanned }">
       <slot />
     </div>
-    <div class="project-card__info">
+    <div :class="{ 'project-card__info--stacked': stackedInfo }" class="project-card__info">
       <div class="project-card__heading">
         <h3 class="project-card__title">{{ title }}</h3>
         <p class="project-card__ref">{{ moduleLabel }}</p>
@@ -49,6 +51,26 @@ onUnmounted(() => observer?.disconnect())
       <div class="project-card__tags">
         <span v-for="tag in tags" :key="tag" class="tag">{{ tag }}</span>
       </div>
+    </div>
+    <div class="project-card__links">
+      <NuxtLink
+        v-if="links.demo"
+        class="project-card__link"
+        :to="links.demo"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Accéder au site</NuxtLink
+      >
+      <NuxtLink
+        v-if="links.github"
+        class="project-card__link"
+        :to="links.github"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Repo GitHub</NuxtLink
+      >
     </div>
   </article>
 </template>
@@ -96,6 +118,11 @@ onUnmounted(() => observer?.disconnect())
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid $line;
+    &--stacked {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
   }
   &__title {
     margin: 0 0 6px;
@@ -115,6 +142,25 @@ onUnmounted(() => observer?.disconnect())
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+  }
+  &__links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  &__link {
+    padding: 5px 5px;
+    border: 1px solid $line;
+    background: rgba($core, 0.03);
+    font-family: $font-mono;
+    font-size: 12px;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+    &:hover {
+      border-color: $core;
+    }
   }
 }
 .readout {
