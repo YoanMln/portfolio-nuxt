@@ -14,6 +14,7 @@ const section = useSectionContext('projects')
       :reference="watchmakersguide.reference"
       :module-label="watchmakersguide.moduleLabel"
       :tags="watchmakersguide.tags"
+      :links="watchmakersguide.links"
     >
       <UiCarousel :slides="watchmakersguide.slides" />
     </ProjectCard>
