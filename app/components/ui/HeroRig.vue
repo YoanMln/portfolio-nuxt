@@ -133,7 +133,7 @@ const followPath = (d, delay = 0) => ({
   max-width: 100%;
   height: var(--rig-h);
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     width: auto;
     height: auto;
   }
@@ -170,7 +170,7 @@ const followPath = (d, delay = 0) => ({
     opacity: 0.75;
   }
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     display: none;
   }
 }
@@ -189,7 +189,7 @@ const followPath = (d, delay = 0) => ({
   pointer-events: none;
   animation: tube-travel 11.4s linear infinite;
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     display: none;
   }
 }

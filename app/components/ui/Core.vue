@@ -65,8 +65,8 @@ defineProps({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
-  height: 400px;
+  width: min(400px, calc(100vw - 4rem));
+  height: min(400px, calc(100vw - 4rem));
   margin-bottom: 1.6rem;
   animation-delay: 0.1s;
 }

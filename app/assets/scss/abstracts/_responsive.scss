@@ -5,3 +5,10 @@ $bp-mobile: 680px;
     @content;
   }
 }
+$bp-hero-rig: 784px;
+
+@mixin mq-hero-rig {
+  @media (max-width: $bp-hero-rig) {
+    @content;
+  }
+}

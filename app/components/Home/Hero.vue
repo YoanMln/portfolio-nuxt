@@ -43,7 +43,7 @@ const section = useSectionContext('hero')
   width: fit-content;
   transform: translateX(-50%);
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     position: static;
     top: auto;
     left: auto;
@@ -63,7 +63,7 @@ const section = useSectionContext('hero')
   display: flex;
   justify-content: space-between;
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     position: static;
     width: auto;
     transform: none;
@@ -92,7 +92,7 @@ const section = useSectionContext('hero')
     border-color: $core;
   }
 
-  @include mq-mobile {
+  @include mq-hero-rig {
     width: auto;
     min-width: 180px;
   }
