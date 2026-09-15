@@ -17,6 +17,9 @@ const section = useSectionContext('profil')
 </template>
 
 <style scoped lang="scss">
+.intro {
+  padding-top: 1rem;
+}
 .intro__text {
   max-width: 62ch;
   font-size: 20px;
