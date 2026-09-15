@@ -1,72 +1,100 @@
 <script setup>
 import information from '~/data/hero/hero-informations.json'
+
 const section = useSectionContext('hero')
 </script>
 
 <template>
   <section ref="section" class="hero">
-    <UiCore />
-    <h1 class="hero__name">{{ information.name }}</h1>
-    <p class="hero__status">
-      {{ information.job }}
-      <span>// statut : {{ information.statut }}</span>
-    </p>
+    <UiHeroRig>
+      <div class="hero__core-slot">
+        <UiCore :name="information.name" :job="information.job" :statut="information.statut" />
+      </div>
+
+      <div class="hero__cta">
+        <NuxtLink to="#projects" class="cta">Mes projets</NuxtLink>
+        <NuxtLink to="#contact" class="cta">Me contacter</NuxtLink>
+      </div>
+    </UiHeroRig>
   </section>
 </template>
 
 <style scoped lang="scss">
 .hero {
   position: relative;
-  min-height: 82vh;
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: 2rem;
-  background:
-    radial-gradient(50% 40% at 88% 12%, rgba(200, 149, 47, 0.1), transparent 70%),
-    radial-gradient(120% 100% at 50% 100%, rgba(143, 232, 255, 0.06), transparent 60%);
+  padding: 0 2rem 2rem;
+  @include mq-mobile {
+    justify-content: center;
+    padding: 2rem;
+  }
 }
-.hero__name {
-  font-family: $font-display;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: clamp(2.6rem, 8vw, 5.2rem);
-  margin: 0;
-  color: #fff;
-  text-shadow: 0 0 30px rgba(143, 232, 255, 0.4);
-  opacity: 0;
-  animation: boot-in 0.7s ease-out forwards;
-  animation-delay: 0.5s;
+
+.hero__core-slot {
+  position: absolute;
+  top: var(--core-top);
+  left: 50%;
+  z-index: 2;
+  width: fit-content;
+  transform: translateX(-50%);
+
+  @include mq-hero-rig {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    transform: none;
+    margin: 0 auto 1.6rem;
+  }
 }
-.hero__status {
+
+.hero__cta {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 2;
+  width: var(--cta-span);
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+
+  @include mq-hero-rig {
+    position: static;
+    width: auto;
+    transform: none;
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--cta-w);
+  height: var(--cta-h);
+  padding: 0 15px;
+  border: 1px solid $line;
+  background: rgba($core, 0.03);
   font-family: $font-mono;
-  font-size: 13px;
-  color: $core;
-  margin: 1rem 0 0;
-  letter-spacing: 0.04em;
-  opacity: 0;
-  animation: boot-in 0.7s ease-out forwards;
-  animation-delay: 0.85s;
-}
-.hero__status span {
-  color: $muted;
-}
-@keyframes boot-in {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-    filter: blur(2px);
+  font-size: 15px;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $core;
   }
-  60% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+
+  @include mq-hero-rig {
+    width: auto;
+    min-width: 180px;
   }
 }
 </style>

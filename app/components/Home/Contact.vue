@@ -65,7 +65,7 @@ async function onSubmit(event) {
 </script>
 
 <template>
-  <section ref="section" class="section contact">
+  <section ref="section" class="section contact" id="contact">
     <div class="section-head">
       <div class="eyebrow">Contact</div>
       <h2 class="section-title">Établir la connexion</h2>
