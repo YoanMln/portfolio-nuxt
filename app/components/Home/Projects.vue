@@ -4,7 +4,7 @@ const section = useSectionContext('projects')
 </script>
 
 <template>
-  <section ref="section" class="section projects">
+  <section ref="section" class="section projects" id="projects">
     <div class="section-head">
       <div class="eyebrow">Module principal</div>
       <h2 class="section-title">Projets</h2>
