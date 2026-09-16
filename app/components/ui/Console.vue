@@ -61,9 +61,11 @@ const { status } = useConsole()
   &__lines {
     display: flex;
     flex-direction: column;
+    min-width: 0;
   }
   &__text {
     transition: opacity 0.4s ease;
+    overflow-wrap: break-word;
 
     &:nth-last-child(2) {
       opacity: 0.45;
